@@ -1,7 +1,9 @@
 var botao = document.getElementById("botao");
 botao.addEventListener("click", alertar);
 
+var nome = document.getElementById("nome");
+
 function alertar(){
-    alert("O botão foi clicado!!!");
+    alert("O nome inderido foi" +nome);
 }
 
