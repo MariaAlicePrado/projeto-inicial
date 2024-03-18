@@ -11,19 +11,19 @@ var numero = document.getElementById("numero");
 var complemento = document.getElementById("complemento");
 var bairro = document.getElementById("bairro");
 var cidade = document.getElementById("cidade");
-var estado = document;getElementById("estado");
+var estado = document.getElementById("estado");
 
 function alertar(){
    // alert("O nome inserido foi: " + nome.value);
    saida.innerText = "Nome: " + nome.value +
-                "\n E-mail: " + email.value;
-                "\n Telefone: " + tel.value;
-                "\n CEP: " + cep.value;
-                "\n Logradouro: " + logradouro.value;
-                "\n Número: " + numero.value;
-                "\n Complemento: " + complemento.value;
-                "\n Bairro: " + bairro.value;
-                "\n Cidade: " + cidade.value;
+                "\n E-mail: " + email.value +
+                "\n Telefone: " + tel.value +
+                "\n CEP: " + cep.value+
+                "\n Logradouro: " + logradouro.value+
+                "\n Número: " + numero.value+
+                "\n Complemento: " + complemento.value+
+                "\n Bairro: " + bairro.value+
+                "\n Cidade: " + cidade.value+
                 "\n Estado: " + estado.value;
 }
 
