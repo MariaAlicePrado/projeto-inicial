@@ -15,15 +15,36 @@ var estado = document.getElementById("estado");
 
 function alertar(){
    // alert("O nome inserido foi: " + nome.value);
+
+   if(cep.value.length < 8){
+      alert("CEP inválido!");
+      return;
+   }
+
+   //remover o traço do CEP
+   cep.value = cep.value.replace('-','');
+
+const url = `https://viacep.com.br/ws/${cep.value}/json/`;
+
+   fetch(url)
+   .then(function(resposta){ return resposta.json();})
+
+   .then(function(dados){ logradouro.value = dados.logradouro;
+                          complemento.value = dados.complemento;
+                          bairro.value = dados.bairro;
+                          cidade.value = dados.cidade;
+                          estado.value = dados.estado;})
+
+   .catch(function(e){ alert(e.message());})
+
    saida.innerText = "Nome: " + nome.value +
                 "\n E-mail: " + email.value +
                 "\n Telefone: " + tel.value +
-                "\n CEP: " + cep.value+
-                "\n Logradouro: " + logradouro.value+
-                "\n Número: " + numero.value+
-                "\n Complemento: " + complemento.value+
-                "\n Bairro: " + bairro.value+
-                "\n Cidade: " + cidade.value+
+                "\n CEP: " + cep.value +
+                "\n Logradouro: " + logradouro.value +
+                "\n Número: " + numero.value +
+                "\n Complemento: " + complemento.value +
+                "\n Bairro: " + bairro.value +
+                "\n Cidade: " + cidade.value +
                 "\n Estado: " + estado.value;
 }
-
